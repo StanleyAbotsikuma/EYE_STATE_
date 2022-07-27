@@ -27,13 +27,13 @@ void getPayloadFunction(uint8_t * payload) {
   
   if (payload1 == "On")
   {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(5, HIGH);
 
   }
 
   if (payload1 == "Off")
   {
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(5, LOW);
   }
 
 
@@ -63,7 +63,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
 }
 
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(5, OUTPUT);
   USE_SERIAL.begin(115200);
   USE_SERIAL.println();
   USE_SERIAL.println();
@@ -78,7 +78,8 @@ void setup() {
   //WiFiMulti.addAP("Frigo Internet", "Zivl2308");
   
   // WiFiMulti.addAP("itel P13", "mummyboy1");
-  WiFiMulti.addAP("TechSpace", "#$martYEar?");
+//  WiFiMulti.addAP("TechSpace", "#$martYEar?");
+WiFiMulti.addAP("Trevillion", "trevillion.mifi.c");
   while (WiFiMulti.run() != WL_CONNECTED) {
     delay(100);
   }
